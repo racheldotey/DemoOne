@@ -1,6 +1,5 @@
 # Transcript-DemoOne
-A test run of Python to JavaScript conversion using Transcrypt.
-
+A test run of Python to JavaScript conversion using Transcrypt.  
 Just getting a basic hello world up and running to test Transcrypt.
 
 
@@ -10,20 +9,18 @@ Just getting a basic hello world up and running to test Transcrypt.
 ### Web Server
 MAMP OR WAMP OR XAMPP are all good options
 
-MAMP (OSX) - https://www.mamp.info/en/
-WAMP (Windows)
+MAMP (OSX) - https://www.mamp.info/en/  
 XAMPP (OSX, Windows, Linux) - https://www.apachefriends.org/index.html
 
 ### Java Developer Kit
-Us the downloadable installer here:
+Us the downloadable installer here:  
 https://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 ### Python
-Use the downloadable installer here: 
+Use the downloadable installer here:  
 https://www.python.org/downloads/
 
-**Warning:**
-
+**Warning:**  
 Transcrypt requires Python 3.5 or 3.6. _Python 3.7 is not yet supported._
 
 To check your current version of Python open Terminal on MacOSX and use the following command:
@@ -31,8 +28,7 @@ To check your current version of Python open Terminal on MacOSX and use the foll
 python3 --version
 ```
 
-**Note**
-
+**Note**  
 Python provides an alies to allow multiple versions to be used on a single macheine. Consequently the latest version of Python >v3.0 can be executed via the `python3` alies. `python` will still refer to ealier (<v3.0) versions of Python if they are installed.
 
 Additionally packages installed using easy_install or PIP can be referenced by using the `python3` alias and `-m` for module. For example:
@@ -41,11 +37,10 @@ python3 -m <package name> <command(s)>
 ```
 
 ### PIP
-A PIP and VirtualEnv installation tutorial _(recommended by Transcrypt)_ is available here:
+A PIP and VirtualEnv installation tutorial _(recommended by Transcrypt)_ is available here:  
 https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/
 
 **Condensed Install Instructions**
-
 ```bash
 sudo python3 -m easy_install pip
 ```
@@ -54,11 +49,9 @@ To guarentee you have the latest version of PIP installed, run the upgrade metho
 ```bash
 python3 -m pip install --upgrade pip
 ```
-
 Python 3.6 uses PIP v18.0 _as of this writing._
 
-**Note**
-
+**Note**  
 PIP provides an alies to allow multiple versions of Python to be used on a single machiene. Consequently PIP commands can be executed via either `python3 -m pip` OR by `pip3`. For example the previous update command can also be triggered by the following script:
 ```bash
 pip3 install --upgrade pip
@@ -81,11 +74,10 @@ pip3 uninstall <package name>
 ```
 
 ### VirtualEnv
-A PIP and VirtualEnv installation tutorial _(recommended by Transcrypt)_ is available here:
+A PIP and VirtualEnv installation tutorial _(recommended by Transcrypt)_ is available here:  
 https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/
 
 **Condensed Install Instructions**
-
 ```bash
 pip3 install virtualenv
 ```
