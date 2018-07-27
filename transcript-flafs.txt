@@ -1,0 +1,112 @@
+$ transcrypt -h
+
+Transcrypt (TM) Python to JavaScript Small Sane Subset Transpiler Version 3.6.101
+Copyright (C) Geatec Engineering. License: Apache 2.0
+
+usage: transcrypt [-h] [-a] [-b] [-c] [-d] [-dc] [-da] [-de] [-dn] [-dm] [-dt]
+                  [-ds] [-e [ESV]] [-f] [-g] [-i] [-jc] [-jk] [-jm] [-k] [-kc]
+                  [-l] [-m] [-n] [-o] [-p [PARENT]] [-r] [-s [SYMBOLS]] [-sf]
+                  [-t] [-u [UNIT]] [-v] [-x X] [-xc] [-xp [XPATH]] [-xt] [-*]
+                  [source]
+
+positional arguments:
+  source                .py file containing source code of main module
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -a, --anno            annotate target files that were compiled from Python
+                        with source file names and source line numbers
+  -b, --build           rebuild all target files from scratch
+  -c, --complex         enable complex number support, locally requires
+                        operator overloading
+  -d, --docat           enable __doc__ attributes. Apply sparsely, since it
+                        will make docstrings part of the generated code
+  -dc, --dcheck         debug: perform lightweight consistency check
+  -da, --dassert        debug: activate assertions
+  -de, --dextex         debug: show extended exception reports
+  -dn, --dnostrip       debug: no comment stripping of __core__ and
+                        __builtin__ in-line modules
+  -dm, --dmap           debug: dump human readable source map
+  -dt, --dtree          debug: dump syntax tree
+  -ds, --dstat          debug: validate static typing using annotations
+  -e [ESV], --esv [ESV]
+                        ecma script version of generated code, default = 5.
+                        The symbol __esv<versionnr>__ is added to the global
+                        symbol list, e.g. __esv6__.
+  -f, --fcall           enable fastcall mechanism by default. You can also use
+                        __pragma__ ('fcal') and __pragma__ ('nofcall')
+  -g, --gen             enable generators and iterators. Disadvised, since it
+                        will result in a function call for each loop
+                        iteration. Preferably use __pragma__ ('gen') and
+                        __pragma__ ('nogen')
+  -i, --iconv           enable automatic conversion to iterable by default.
+                        Disadvised, since it will result in a type check for
+                        each for-loop. Preferably use __pragma__ ('iconv') and
+                        __pragma__ ('noiconv') to enable automatic conversion
+                        locally
+  -jc, --jscall         enable native JavaScript calls for Python methods.
+                        This is fast, but doesn't support bound method
+                        assignment, decorators and non-instance methods.
+                        Preferably use __pragma__ ('jscall') and __pragma__
+                        ('nojscall') to enable native JavaScript calls locally
+  -jk, --jskeys         interpret {key: 'value'} as {'key': 'value'} and
+                        forbid {key (): 'value'}, as JavaScript does.
+                        Disadvised, since it's less flexible than the Python
+                        interpretation. Either follow Python semantics by
+                        using {'key': 'value'} explicitly if you want literal
+                        keys or use __pragma__ ('jskeys') and __pragma__
+                        ('nojskeys') locally instead to make clear local
+                        deviation from Python semantics
+  -jm, --jsmod          give % and %= JavaScript rather than Python behaviour.
+                        Disadvised, since it deviates from the mathematical
+                        'modulo' operator. Either follow Python semantics or
+                        use __pragma__ ('jskeys') and __pragma__ ('nojskeys')
+                        locally instead to make clear local deviation.
+  -k, --kwargs          enable keyword arguments by default. In general this
+                        is disadvised, use __pragma__ ('kwargs') and
+                        __pragma__('nokwargs') locally instead to prevent
+                        bloated code
+  -kc, --keycheck       enable checking for existence of dictionary keys. In
+                        general this is disadvised, use __pragma__
+                        ('keycheck') and __pragma__('nokeycheck') locally
+                        instead to prevent bloated code
+  -l, --license         show license
+  -m, --map             generate source map
+  -n, --nomin           no minification
+  -o, --opov            enable operator overloading by default. In general
+                        this is disadvised, use __pragma__ ('opov') and
+                        __pragma__('noopov') locally instead to prevent slow
+                        code
+  -p [PARENT], --parent [PARENT]
+                        object that will hold application, default is window.
+                        Use -p .none to generate orphan application, e.g. for
+                        use in node.js. Use -p .user to generate an
+                        application that has to be explicitly initialized by
+                        calling <application name> (), e.g. after the full
+                        page has loaded
+  -r, --run             run source file rather than compiling it
+  -s [SYMBOLS], --symbols [SYMBOLS]
+                        names, joined by $, separately passed to main module
+                        in __symbols__ variable
+  -sf, --sform          enable support for string formatting mini language
+  -t, --tconv           enable automatic conversion to truth value by default.
+                        Disadvised, since it will result in a conversion for
+                        each boolean. Preferably use __pragma__ ('tconv') and
+                        __pragma__ ('notconv') to enable automatic conversion
+                        locally
+  -u [UNIT], --unit [UNIT]
+                        compile to units rather than to monolithic
+                        application. Use -u .run to generate the loader and
+                        the runtime unit. Use -u without parameters to
+                        generate a component unit.
+  -v, --verbose         show all messages
+  -x X, --x X           reserved for extended options
+  -xc, --xconfimp       confine imported names to directly importing module
+  -xp [XPATH], --xpath [XPATH]
+                        additional module search paths, joined by $, #'s will
+                        be replaced by spaces
+  -xt, --xtiny          generate tiny version of runtime, a.o. lacking support
+                        for implicit and explicit operator overloading. Use
+                        only if generated code can be validated, since it will
+                        introduce semantic alterations in edge cases
+  -*, --star            Like it? Grow it! Go to GitHub and then click [* Star]
